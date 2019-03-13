@@ -1,0 +1,10 @@
+NFC
+a. Provide a NFC service that can be called from the Authentication module. The NFC
+card ID passed to the service. The system responds with the clientID of the person
+who owns the card or a notAuthenticated-exception.
+b. The system should maintain its own data bank of NFC card ID’s for authentication
+purposes.
+c. Keep a Module Audit log and provide a service to produce a portion of the log within a
+specified time span.
+d. Sync user-list – update the list of users in the current database to be the same as the
+list in the client information system.
