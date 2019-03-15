@@ -269,4 +269,4 @@ var it = junit();
         it.eq(getAuditLog(0003).then(function(data){return data}), '{"error":"NotAuthenticated"}')
     );
     it.run();
-})();
+});
