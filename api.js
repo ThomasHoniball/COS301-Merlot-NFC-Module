@@ -24,6 +24,36 @@ const start = () => {
 			authenticateNFCID(value).then(function(data){
 				client = data;
 				let html =
+					`
+					<!DOCTYPE html>
+					<html lang="en">
+					<head>
+						<meta charset="utf-8">
+						<meta http-equiv="X-UA-Compatible" content="IE=edge">
+						<title>NFC Demo</title>
+						<meta name="viewport" content="width=device-width, initial-scale=1">
+					</head>
+					<body>
+						<h1>Phase 3 - Demo 1</h1>
+						<hr>
+						<h2>NFC Chip ID => Client ID</h2>
+						<form action="" method="GET">
+							<label>NFC Chip ID: </label><input name="nfc_id" type="number" id="nfc_id">
+							<button type="submit">Find ClientID</button>
+						</form>
+						<br>
+						<label>Card ID: </label><p>${client}</p>
+						<br>
+						<form action="" method="GET">
+							<h2>Logs</h2>			       
+							<label>Client ID: </label><input type="number" name="client_id">
+							<button type="submit">Generate Logs</button>
+							<br>
+							<textarea id="json_output" cols="50" rows="5"></textarea>
+						</form>
+					</body>
+					</html>
+					`
 					
 				response.writeHead(200, {'Content-Type' : 'text/html'});
 				response.write(html);
@@ -35,8 +65,37 @@ const start = () => {
 			value = request.url.substring(pos + 1,request.url.length);
 			getAuditLog(value).then(function(data){
 				client = data;
-				let html =
-					
+				let html = 
+					`
+					<!DOCTYPE html>
+					<html lang="en">
+					<head>
+						<meta charset="utf-8">
+						<meta http-equiv="X-UA-Compatible" content="IE=edge">
+						<title>NFC Demo</title>
+						<meta name="viewport" content="width=device-width, initial-scale=1">
+					</head>
+					<body>
+						<h1>Phase 3 - Demo 1</h1>
+						<hr>
+						<h2>NFC Chip ID => Client ID</h2>
+						<form action="" method="GET">
+							<label>NFC Chip ID: </label><input name="nfc_id" type="number" id="nfc_id">
+							<button type="submit">Find ClientID</button>
+						</form>
+						<br>
+						<label>Client ID: </label><p></p>
+						<br>
+						<form action="" method="GET">
+							<h2>Logs</h2>			       
+							<label>Card ID: </label><input type="number" name="client_id">
+							<button type="submit">Generate Logs</button>
+							<br>
+							<textarea id="json_output" cols="50" rows="5">${client}</textarea>
+						</form>
+					</body>
+					</html>
+					`	
 				response.writeHead(200, {'Content-Type' : 'text/html'});
 				response.write(html);
 				response.end();
@@ -45,6 +104,36 @@ const start = () => {
 		else
 		{
 			let html =
+				`
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="utf-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<title>NFC Demo</title>
+					<meta name="viewport" content="width=device-width, initial-scale=1">
+				</head>
+				<body>
+					<h1>Phase 3 - Demo 1</h1>
+					<hr>
+					<h2>NFC Chip ID => Client ID</h2>
+					<form action="" method="GET">
+						<label>NFC Chip ID: </label><input name="nfc_id" type="number" id="nfc_id">
+						<button type="submit">Find ClientID</button>
+					</form>
+					<br>
+					<label>Client ID: </label><p></p>
+					<br>
+					<form action="" method="GET">
+						<h2>Logs</h2>			       
+						<label>Card ID: </label><input type="number" name="client_id">
+						<button type="submit">Generate Logs</button>
+						<br>
+						<textarea id="json_output" cols="50" rows="5"></textarea>
+					</form>
+				</body>
+				</html>
+				`
 					
 				response.writeHead(200, {'Content-Type' : 'text/html'});
 				response.write(html);
