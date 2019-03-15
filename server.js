@@ -1,5 +1,5 @@
 const mysql = require('mysql'); 
-const forEach = require('forEach');
+//const forEach = require('forEach'); Stupid Heroku
 var junit = require("junit")
 var express = require('express');
 var app = express();
