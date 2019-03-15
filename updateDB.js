@@ -21,7 +21,7 @@ function update()
 			var nfcDB = mysql.createConnection({
 				host: "qbct6vwi8q648mrn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
 				user: "onqy5tpsj3s4y1bo",
-				password: "g0z36k6cxj6kvh0t",
+				password: "ccjf24781zs40f9s",
 				database: "tiiwm3tr2t946xrd"
 			});
 			
@@ -29,12 +29,12 @@ function update()
 			nfcDB.connect(function(err) {
 				if (err) throw err;
 				console.log("Connected to internal NFC Database");
-				nfcDB.query("DELETE FROM tbl_client", function (err, result) {
+				nfcDB.query("DELETE FROM nfc_tabl", function (err, result) {
 					console.log("NFC DB cleared");
 					if (err) throw err;
 					console.log("Number of records deleted: " + result.affectedRows);
 				});
-				var sql = "INSERT INTO tbl_client (client_id, card_id) VALUES ?";
+				var sql = "INSERT INTO nfc_table (client_id, nfc_id) VALUES ?";
 				//while(typeof data != "object"){}
 				//console.log("Data: " + data[0].client_id);
 				var values = [];
