@@ -263,7 +263,7 @@ var it = junit();
         it.eq(getAuditLog(0001).then(function(data){return data}), '{"audit_id":1,"client_id":123456,"timestamp":"2019-03-15T01:40:59.000Z","authenticationStatus":1}')
     );
      it("Valid Audit 5", () =>
-        it.eq(getAuditLog(0002).then(function(data){return data}), '{"audit_id":2,"client_id":12121212,"timestamp":"2019-03-14T23:42:59.000Z","authenticationStatus":0}')
+        it.eq(getAuditLog(0002).then(function(data){return data}), '{"audit_id":2,"client_id":12121212,"timestamp":"2019-03-15T01:42:59.000Z","authenticationStatus":0}')
     );
     it("Invalid Audit 6", () =>
         it.eq(getAuditLog(0003).then(function(data){return data}), '{"error":"NotAuthenticated"}')
