@@ -174,10 +174,12 @@ function authenticateNFCID(nfc_id){
 				{
 
 					resolve(result['0'].client_id);
+					cond.end();
 				}
 				else
 				{
 					resolve('NotAuthenticated');
+					con.end();
 				}
 			});
 		});
@@ -210,13 +212,16 @@ function getAuditLog(card_id){
 				if(result.length > 0)
 				{
 					resolve(generateJSON(['audit_id','client_id','timestamp','authenticationStatus'],[result[0].audit_id,result[0].client_id,result[0].timestamp,result[0].authenticationStatus]).then(function(data){return data;}));
+					con.end()
 				}
 				else
 				{
 					resolve(generateJSON(['error'],['NotAuthenticated']).then(function(data){return data;}));
+					con.end();
 				}
 			});
 		});
+
 	});
 }
 
