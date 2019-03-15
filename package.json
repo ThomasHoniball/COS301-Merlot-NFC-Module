@@ -4,7 +4,7 @@
   "description": "COS301 Mini-Project Phase3",
   "dependencies": {
     "express": "^4.16.3",
-    "forEach": "^2.0.5",
+    "foreach": "^2.0.5",
     "junit": "^1.4.9",
     "mysql": "^2.16.0",
     "socket.io": "^2.1.1"
