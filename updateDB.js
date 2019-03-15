@@ -24,11 +24,16 @@ function update()
 				password: "BunnyRabbit64",
 				database: "nfc_db"
 			});
-			//nfcDB.query()
+			
 
 			nfcDB.connect(function(err) {
 				if (err) throw err;
 				console.log("Connected to internal NFC Database");
+				nfcDB.query("DELETE FROM tbl_client", function (err, result) {
+					console.log("NFC DB cleared");
+					if (err) throw err;
+					console.log("Number of records deleted: " + result.affectedRows);
+				});
 				var sql = "INSERT INTO tbl_client (client_id, card_id) VALUES ?";
 				//while(typeof data != "object"){}
 				//console.log("Data: " + data[0].client_id);
