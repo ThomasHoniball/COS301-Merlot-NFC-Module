@@ -174,7 +174,7 @@ function authenticateNFCID(nfc_id){
 				{
 
 					resolve(result['0'].client_id);
-					cond.end();
+					con.end();
 				}
 				else
 				{
@@ -260,7 +260,7 @@ var it = junit();
     );
 
     it("Valid Audit 4", () =>
-        it.eq(getAuditLog(0001).then(function(data){return data}), '{"audit_id":1,"client_id":123456,"timestamp":"2019-03-14T23:40:59.000Z","authenticationStatus":1}')
+        it.eq(getAuditLog(0001).then(function(data){return data}), '{"audit_id":1,"client_id":123456,"timestamp":"2019-03-15T01:40:59.000Z","authenticationStatus":1}')
     );
      it("Valid Audit 5", () =>
         it.eq(getAuditLog(0002).then(function(data){return data}), '{"audit_id":2,"client_id":12121212,"timestamp":"2019-03-14T23:42:59.000Z","authenticationStatus":0}')
