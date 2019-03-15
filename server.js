@@ -150,10 +150,11 @@ start();
 function authenticateNFCID(nfc_id){
 	return new Promise(function(resolve, reject){
 		let con = mysql.createConnection({
-			host: "localhost",
-			user: "root",
-			password: "",
-			database: "nfc"
+			host: "qbct6vwi8q648mrn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+			user: "onqy5tpsj3s4y1bo",
+			password: "ccjf24781zs40f9s",
+			port:"3306",
+			database: "tiiwm3tr2t946xrd"
 		});
 
 		let sql = "Select * from nfc_table where nfc_id = " + nfc_id;
