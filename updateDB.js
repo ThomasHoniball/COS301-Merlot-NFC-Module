@@ -19,10 +19,10 @@ function update()
 			console.log(result);
 			var data = result;
 			var nfcDB = mysql.createConnection({
-				host: "localhost",
-				user: "root",
-				password: "BunnyRabbit64",
-				database: "nfc_db"
+				host: "qbct6vwi8q648mrn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+				user: "onqy5tpsj3s4y1bo",
+				password: "g0z36k6cxj6kvh0t",
+				database: "tiiwm3tr2t946xrd"
 			});
 			
 
