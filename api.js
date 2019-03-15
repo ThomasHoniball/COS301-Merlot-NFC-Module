@@ -1,3 +1,63 @@
+const mysql = require('mysql'); 
+const forEach = require('forEach');
+var junit = require("junit")
+var express = require('express');
+var app = express();
+
+const http = require('http');
+const fs = require('fs');   
+
+let client = "";
+
+const start = () => {
+	const onRequest = function(request, response){
+		if(request.method == "GET")
+		{
+			console.log(request.url);
+		}
+
+		let pos = request.url.indexOf('=');
+		let value;
+		if(request.url.includes('nfc_id'))
+		{
+			value = request.url.substring(pos + 1,request.url.length);
+			authenticateNFCID(value).then(function(data){
+				client = data;
+				let html =
+					
+				response.writeHead(200, {'Content-Type' : 'text/html'});
+				response.write(html);
+				response.end();
+			});
+		}
+		else if(request.url.includes('client_id'))
+		{
+			value = request.url.substring(pos + 1,request.url.length);
+			getAuditLog(value).then(function(data){
+				client = data;
+				let html =
+					
+				response.writeHead(200, {'Content-Type' : 'text/html'});
+				response.write(html);
+				response.end();
+			});
+		}
+		else
+		{
+			let html =
+					
+				response.writeHead(200, {'Content-Type' : 'text/html'});
+				response.write(html);
+				response.end();
+		}
+	}
+
+	http.createServer(onRequest).listen(3000);
+	console.log("Server has started, listening on port 3000");
+}
+
+start();
+
 function authenticateNFCID(nfc_id){
 	return new Promise(function(resolve, reject){
 		let con = mysql.createConnection({
